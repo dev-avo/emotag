@@ -23,16 +23,16 @@
 ## 3. Backend API 개발
 
 ### 3.1 Kaomoji API
-- [ ] 3.1.1 `functions/api/kaomoji/index.js` - GET (전체 목록 조회, status=1)
-- [ ] 3.1.2 `functions/api/kaomoji/index.js` - POST (새 Kaomoji 등록, 중복 검사, 비밀번호 해시)
-- [ ] 3.1.3 `functions/api/kaomoji/search.js` - GET (태그로 검색)
-- [ ] 3.1.4 `functions/api/kaomoji/random.js` - GET (랜덤 1개 조회)
-- [ ] 3.1.5 `functions/api/kaomoji/[id].js` - PUT (Kaomoji 수정, 비밀번호 검증)
-- [ ] 3.1.6 `functions/api/kaomoji/[id].js` - DELETE (Soft delete, status=-1)
-- [ ] 3.1.7 `functions/api/kaomoji/[id]/verify.js` - POST (비밀번호 검증)
+- [x] 3.1.1 `functions/api/kaomoji/index.js` - GET (전체 목록 조회, status=1)
+- [x] 3.1.2 `functions/api/kaomoji/index.js` - POST (새 Kaomoji 등록, 중복 검사, 비밀번호 해시)
+- [x] 3.1.3 `functions/api/kaomoji/search.js` - GET (태그로 검색)
+- [x] 3.1.4 `functions/api/kaomoji/random.js` - GET (랜덤 1개 조회)
+- [x] 3.1.5 `functions/api/kaomoji/[id].js` - PUT (Kaomoji 수정, 비밀번호 검증)
+- [x] 3.1.6 `functions/api/kaomoji/[id].js` - DELETE (Soft delete, status=-1)
+- [x] 3.1.7 `functions/api/kaomoji/[id]/verify.js` - POST (비밀번호 검증)
 
 ### 3.2 Tag API
-- [ ] 3.2.1 `functions/api/tag/index.js` - GET (전체 태그 목록)
+- [x] 3.2.1 `functions/api/tag/index.js` - GET (전체 태그 목록)
 
 ---
 
