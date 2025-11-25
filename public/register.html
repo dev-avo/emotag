@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="emotag - 새로운 Kaomoji 등록">
+    <title>등록하기 - emotag</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-page">
+            <!-- 뒤로가기 -->
+            <a href="/" class="form-page__back">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                홈으로
+            </a>
+
+            <!-- 헤더 -->
+            <header class="form-page__header">
+                <h1 class="form-page__title">새 카오모지 등록</h1>
+                <p class="form-page__subtitle">귀여운 카오모지를 공유해 주세요!</p>
+            </header>
+
+            <!-- 등록 폼 -->
+            <div class="form-card">
+                <form id="register-form">
+                    <!-- Kaomoji 입력 -->
+                    <div class="form-group">
+                        <label class="form-group__label" for="kaomoji-input">카오모지</label>
+                        <input 
+                            type="text" 
+                            id="kaomoji-input" 
+                            class="form-group__input form-group__input--kaomoji" 
+                            placeholder="(◕‿◕)"
+                            autocomplete="off"
+                            required
+                        >
+                        <p class="form-group__help">등록할 카오모지를 입력하세요</p>
+                        <p class="form-group__error" id="kaomoji-error" style="display: none;"></p>
+                    </div>
+
+                    <!-- 태그 입력 -->
+                    <div class="form-group">
+                        <label class="form-group__label">태그</label>
+                        <div class="tag-input" id="tag-input-container">
+                            <div id="tag-list"></div>
+                            <input 
+                                type="text" 
+                                id="tag-input" 
+                                class="tag-input__field" 
+                                placeholder="태그 입력 후 Enter"
+                                autocomplete="off"
+                            >
+                        </div>
+                        <p class="form-group__help">태그를 입력하고 Enter를 누르세요 (최소 1개 이상)</p>
+                        <p class="form-group__error" id="tag-error" style="display: none;"></p>
+                    </div>
+
+                    <!-- 비밀번호 입력 -->
+                    <div class="form-group">
+                        <label class="form-group__label" for="password-input">비밀번호</label>
+                        <input 
+                            type="password" 
+                            id="password-input" 
+                            class="form-group__input" 
+                            placeholder="수정/삭제 시 필요합니다"
+                            autocomplete="new-password"
+                            required
+                        >
+                        <p class="form-group__help">나중에 수정하거나 삭제할 때 필요해요</p>
+                        <p class="form-group__error" id="password-error" style="display: none;"></p>
+                    </div>
+
+                    <!-- 비밀번호 확인 -->
+                    <div class="form-group">
+                        <label class="form-group__label" for="password-confirm-input">비밀번호 확인</label>
+                        <input 
+                            type="password" 
+                            id="password-confirm-input" 
+                            class="form-group__input" 
+                            placeholder="비밀번호를 다시 입력하세요"
+                            autocomplete="new-password"
+                            required
+                        >
+                        <p class="form-group__error" id="password-confirm-error" style="display: none;"></p>
+                    </div>
+
+                    <!-- 버튼 -->
+                    <div class="mt-lg">
+                        <button type="submit" id="submit-btn" class="btn btn--primary" style="width: 100%;">
+                            등록하기
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/utils.js"></script>
+    <script src="/js/register.js"></script>
+</body>
+</html>
+
