@@ -1,0 +1,12 @@
+# emotag - Cloudflare Pages 설정
+name = "emotag"
+compatibility_date = "2024-01-01"
+pages_build_output_dir = "public"
+
+# D1 데이터베이스 바인딩
+# 아래 database_id는 `wrangler d1 create emotag-db` 실행 후 생성된 ID로 교체하세요
+[[d1_databases]]
+binding = "EMOTAG_DB"
+database_name = "emotag-db"
+database_id = "YOUR_DATABASE_ID_HERE"
+

@@ -1,0 +1,26 @@
+{
+    "name": "emotag",
+    "version": "1.0.0",
+    "description": "Kaomoji 검색 및 공유 서비스 - 태그 기반으로 Kaomoji를 쉽게 검색하고 복사",
+    "private": true,
+    "scripts": {
+        "dev": "wrangler pages dev public --d1 EMOTAG_DB",
+        "deploy": "wrangler pages deploy public",
+        "db:create": "wrangler d1 create emotag-db",
+        "db:migrate": "wrangler d1 execute emotag-db --file=schema.sql",
+        "db:migrate:local": "wrangler d1 execute emotag-db --local --file=schema.sql"
+    },
+    "keywords": [
+        "kaomoji",
+        "emoticon",
+        "emoji",
+        "cloudflare-pages",
+        "d1"
+    ],
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "wrangler": "^3.0.0"
+    }
+}
+
