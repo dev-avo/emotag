@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if(!password) {
         // 비밀번호가 없으면 홈으로 리다이렉트
-        showToast('비밀번호 인증이 필요합니다', 'error');
+        showToast('비밀번호 인증이 필요합니다.', 'error');
         setTimeout(function() {
             window.location.href = '/';
         }, 1000);
@@ -195,13 +195,13 @@ async function handleSubmit(e) {
         if(error.message.includes('이미 등록된')) {
             showErrorMsg(kaomojiError, error.message);
         } else if(error.message.includes('비밀번호')) {
-            showToast('비밀번호가 일치하지 않습니다', 'error');
+            showToast('비밀번호가 일치하지 않습니다.', 'error');
             setTimeout(function() {
                 sessionStorage.removeItem('edit_password');
                 window.location.href = '/';
             }, 1500);
         } else {
-            showToast(error.message || '수정에 실패했습니다', 'error');
+            showToast(error.message || '수정에 실패했습니다.', 'error');
         }
 
         submitBtn.disabled = false;
@@ -214,12 +214,12 @@ function validateForm() {
 
     const contents = kaomojiInput.value.trim();
     if(!contents) {
-        showErrorMsg(kaomojiError, '카오모지를 입력하세요');
+        showErrorMsg(kaomojiError, '감정표현을 입력하세요.');
         isValid = false;
     }
 
     if(tags.length === 0) {
-        showErrorMsg(tagError, '태그를 최소 1개 이상 입력하세요');
+        showErrorMsg(tagError, '태그를 최소 1개 이상 입력하세요.');
         isValid = false;
     }
 
@@ -251,7 +251,7 @@ async function handleDelete() {
         sessionStorage.removeItem('edit_password');
         
         hideDeleteModal();
-        showToast('삭제되었습니다', 'success');
+        showToast('삭제되었습니다.', 'success');
         
         setTimeout(function() {
             window.location.href = '/';
@@ -261,13 +261,13 @@ async function handleDelete() {
         hideDeleteModal();
 
         if(error.message.includes('비밀번호')) {
-            showToast('비밀번호가 일치하지 않습니다', 'error');
+            showToast('비밀번호가 일치하지 않습니다.', 'error');
             setTimeout(function() {
                 sessionStorage.removeItem('edit_password');
                 window.location.href = '/';
             }, 1500);
         } else {
-            showToast(error.message || '삭제에 실패했습니다', 'error');
+            showToast(error.message || '삭제에 실패했습니다.', 'error');
         }
 
         deleteConfirmBtn.disabled = false;

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="emotag - Kaomoji 수정">
+    <meta name="description" content="emotag - 감정표현 수정">
     <title>수정하기 - emotag</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
@@ -27,8 +27,8 @@
             <!-- 에러 상태 -->
             <div class="empty-state" id="error-state" style="display: none;">
                 <div class="empty-state__icon">⚠️</div>
-                <h2 class="empty-state__title">카오모지를 찾을 수 없어요</h2>
-                <p class="empty-state__text">삭제되었거나 존재하지 않는 카오모지입니다</p>
+                <h2 class="empty-state__title">감정표현을 찾을 수 없어요.</h2>
+                <p class="empty-state__text">삭제되었거나 존재하지 않는 감정표현입니다.</p>
                 <a href="/" class="btn btn--primary mt-lg">홈으로 돌아가기</a>
             </div>
 
@@ -36,15 +36,15 @@
             <div id="edit-content" style="display: none;">
                 <!-- 헤더 -->
                 <header class="form-page__header">
-                    <h1 class="form-page__title">카오모지 수정</h1>
-                    <p class="form-page__subtitle">내용이나 태그를 수정할 수 있어요</p>
+                    <h1 class="form-page__title">감정표현 수정</h1>
+                    <p class="form-page__subtitle">내용이나 태그를 수정할 수 있어요.</p>
                 </header>
 
                 <div class="form-card">
                     <form id="edit-form">
                         <!-- Kaomoji 입력 -->
                         <div class="form-group">
-                            <label class="form-group__label" for="kaomoji-input">카오모지</label>
+                            <label class="form-group__label" for="kaomoji-input">감정표현</label>
                             <input 
                                 type="text" 
                                 id="kaomoji-input" 
@@ -69,7 +69,7 @@
                                     autocomplete="off"
                                 >
                             </div>
-                            <p class="form-group__help">태그를 입력하고 Enter를 누르세요 (최소 1개 이상)</p>
+                            <p class="form-group__help">태그를 입력하고 Enter를 누르세요. (최소 1개 이상)</p>
                             <p class="form-group__error" id="tag-error" style="display: none;"></p>
                         </div>
 
@@ -99,7 +99,7 @@
         <div class="modal" role="dialog" aria-labelledby="delete-modal-title" aria-modal="true">
             <h2 class="modal__title" id="delete-modal-title">정말 삭제할까요?</h2>
             <p style="text-align: center; color: var(--color-text-secondary); margin-bottom: var(--spacing-lg);">
-                삭제된 카오모지는 복구할 수 없어요
+                삭제된 감정표현은 복구할 수 없어요.
             </p>
             <div class="modal__actions">
                 <button type="button" class="btn btn--ghost" id="delete-cancel">취소</button>

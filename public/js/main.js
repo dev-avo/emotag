@@ -2,6 +2,9 @@
  * emotag - 메인 페이지 스크립트
  */
 
+// 설정
+const MAX_DISPLAY_COUNT = 20; // 홈에서 표시할 최대 개수
+
 // DOM 요소
 const searchInput = document.getElementById('search-input');
 const searchBtn = document.getElementById('search-btn');
@@ -18,10 +21,10 @@ let currentKaomojis = [];
 // ===========================================
 
 document.addEventListener('DOMContentLoaded', function() {
-    // 전체 목록 로드
-    loadKaomojis();
+    // 랜덤 20개 로드
+    loadRandomKaomojis();
 
-    // 이벤트 리스너 등록
+    // 이벤트 리스너
     searchBtn.addEventListener('click', handleSearch);
     searchInput.addEventListener('keydown', function(e) {
         if(e.key === 'Enter') {
@@ -34,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if(searchInput.value.trim()) {
             handleSearch();
         } else {
-            loadKaomojis();
+            loadRandomKaomojis();
         }
     }, 300));
 
@@ -46,17 +49,22 @@ document.addEventListener('DOMContentLoaded', function() {
 // ===========================================
 
 /**
- * 전체 Kaomoji 목록 로드
+ * 랜덤 20개 Kaomoji 로드 (홈 기본 표시)
  */
-async function loadKaomojis() {
+async function loadRandomKaomojis() {
     showLoading();
 
     try {
         const response = await KaomojiAPI.getAll();
-        currentKaomojis = response.data;
+        const allKaomojis = response.data;
+
+        // 셔플 후 20개만 선택
+        const shuffled = shuffleArray([...allKaomojis]);
+        currentKaomojis = shuffled.slice(0, MAX_DISPLAY_COUNT);
+        
         renderKaomojis(currentKaomojis);
     } catch (error) {
-        showToast(error.message || '목록을 불러오는데 실패했습니다', 'error');
+        showToast(error.message || '목록을 불러오는데 실패했습니다.', 'error');
         showEmpty();
     }
 }
@@ -68,7 +76,7 @@ async function handleSearch() {
     const query = searchInput.value.trim();
 
     if(!query) {
-        loadKaomojis();
+        loadRandomKaomojis();
         return;
     }
 
@@ -79,13 +87,13 @@ async function handleSearch() {
         currentKaomojis = response.data;
         renderKaomojis(currentKaomojis);
     } catch (error) {
-        showToast(error.message || '검색에 실패했습니다', 'error');
+        showToast(error.message || '검색에 실패했습니다.', 'error');
         showEmpty();
     }
 }
 
 /**
- * 랜덤 Kaomoji 표시
+ * 랜덤 Kaomoji 1개 표시
  */
 async function handleRandom() {
     try {
@@ -102,7 +110,7 @@ async function handleRandom() {
             showToast(`${kaomoji.contents} 복사되었습니다!`, 'success');
         }
     } catch (error) {
-        showToast(error.message || '랜덤 카오모지를 가져오는데 실패했습니다', 'error');
+        showToast(error.message || '랜덤 감정표현을 가져오는데 실패했습니다.', 'error');
     }
 }
 
@@ -180,7 +188,7 @@ async function handleCardClick(e) {
             if(copied) {
                 showToast(`${contents} 복사되었습니다!`, 'success');
             } else {
-                showToast('복사에 실패했습니다', 'error');
+                showToast('복사에 실패했습니다.', 'error');
             }
             break;
 
@@ -194,7 +202,6 @@ async function handleCardClick(e) {
             const id = target.dataset.id;
             showPasswordModal(parseInt(id), function(password) {
                 // 비밀번호 검증 성공 시 수정 페이지로 이동
-                // 비밀번호를 sessionStorage에 임시 저장 (보안상 주의)
                 sessionStorage.setItem('edit_password', password);
                 window.location.href = `/edit.html?id=${id}`;
             });
@@ -239,3 +246,13 @@ function escapeHtml(text) {
     return div.innerHTML;
 }
 
+/**
+ * 배열 셔플 (Fisher-Yates 알고리즘)
+ */
+function shuffleArray(array) {
+    for(let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}

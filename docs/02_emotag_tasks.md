@@ -64,13 +64,13 @@
 
 ---
 
-## 6. Frontend - 등록 페이지 (register.html)
+## 6. Frontend - 추가 페이지 (add.html)
 
-- [x] 6.1 `public/register.html` - HTML 구조 작성 (폼: Kaomoji, 비밀번호, 태그 입력)
-- [x] 6.2 `public/js/register.js` - 태그 입력 UI (다중 태그 추가/삭제)
-- [x] 6.3 `public/js/register.js` - 폼 유효성 검사
-- [x] 6.4 `public/js/register.js` - 등록 API 호출 및 결과 처리 (성공/중복/에러)
-- [x] 6.5 `public/js/register.js` - 등록 성공 시 홈으로 이동
+- [x] 6.1 `public/add.html` - HTML 구조 작성 (폼: Kaomoji, 비밀번호, 태그 입력)
+- [x] 6.2 `public/js/add.js` - 태그 입력 UI (다중 태그 추가/삭제)
+- [x] 6.3 `public/js/add.js` - 폼 유효성 검사
+- [x] 6.4 `public/js/add.js` - 추가 API 호출 및 결과 처리 (성공/중복/에러)
+- [x] 6.5 `public/js/add.js` - 추가 성공 시 홈으로 이동
 
 ---
 
@@ -103,7 +103,7 @@
 | 3. Backend API | 8 |
 | 4. Frontend 공통 | 9 |
 | 5. 홈 페이지 | 9 |
-| 6. 등록 페이지 | 5 |
+| 6. 추가 페이지 | 5 |
 | 7. 수정 페이지 | 7 |
 | 8. 배포 설정 | 3 |
 | **총계** | **47** |

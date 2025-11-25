@@ -3,7 +3,7 @@
  */
 
 // DOM 요소
-const registerForm = document.getElementById('register-form');
+const addForm = document.getElementById('add-form');
 const kaomojiInput = document.getElementById('kaomoji-input');
 const tagInputContainer = document.getElementById('tag-input-container');
 const tagInput = document.getElementById('tag-input');
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // 폼 제출
-    registerForm.addEventListener('submit', handleSubmit);
+    addForm.addEventListener('submit', handleSubmit);
 
     // 입력 시 에러 초기화
     kaomojiInput.addEventListener('input', function() {
@@ -137,7 +137,7 @@ async function handleSubmit(e) {
     try {
         await KaomojiAPI.create(contents, password, tags);
         
-        showToast('카오모지가 등록되었습니다! 🎉', 'success');
+        showToast('감정표현이 등록되었습니다! 🎉', 'success');
         
         // 홈으로 이동
         setTimeout(function() {
@@ -147,9 +147,9 @@ async function handleSubmit(e) {
     } catch (error) {
         // 중복 에러 처리
         if(error.message.includes('이미 등록된')) {
-            showError(kaomojiError, error.message);
+            showError(kaomojiError, '이미 등록된 감정표현입니다.');
         } else {
-            showToast(error.message || '등록에 실패했습니다', 'error');
+            showToast(error.message || '등록에 실패했습니다.', 'error');
         }
 
         submitBtn.disabled = false;
@@ -166,30 +166,30 @@ function validateForm() {
     // 카오모지 검사
     const contents = kaomojiInput.value.trim();
     if(!contents) {
-        showError(kaomojiError, '카오모지를 입력하세요');
+        showError(kaomojiError, '감정표현을 입력하세요.');
         isValid = false;
     }
 
     // 태그 검사
     if(tags.length === 0) {
-        showError(tagError, '태그를 최소 1개 이상 입력하세요');
+        showError(tagError, '태그를 최소 1개 이상 입력하세요.');
         isValid = false;
     }
 
     // 비밀번호 검사
     const password = passwordInput.value;
     if(!password) {
-        showError(passwordError, '비밀번호를 입력하세요');
+        showError(passwordError, '비밀번호를 입력하세요.');
         isValid = false;
     } else if(password.length < 4) {
-        showError(passwordError, '비밀번호는 4자 이상이어야 합니다');
+        showError(passwordError, '비밀번호는 4자 이상이어야 합니다.');
         isValid = false;
     }
 
     // 비밀번호 확인 검사
     const passwordConfirm = passwordConfirmInput.value;
     if(password !== passwordConfirm) {
-        showError(passwordConfirmError, '비밀번호가 일치하지 않습니다');
+        showError(passwordConfirmError, '비밀번호가 일치하지 않습니다.');
         isValid = false;
     }
 
@@ -218,4 +218,3 @@ function escapeHtml(text) {
     div.textContent = text;
     return div.innerHTML;
 }
-

@@ -53,13 +53,13 @@
 
 ### 5.1 페이지 구조
 ```
-/                 - 홈 (검색창, 등록 버튼, 랜덤 버튼, 검색 결과 목록)
-/register         - Kaomoji 등록 페이지
+/                 - 홈 (검색창, 추가 버튼, 랜덤 버튼, 검색 결과 목록)
+/add              - Kaomoji 추가 페이지
 /edit/:id         - Kaomoji 수정 페이지 (비밀번호 인증 후)
 ```
 
 ### 5.2 UI 요소
-* **홈**: 중앙 정렬된 검색창, 하단에 등록/랜덤 버튼, 검색 결과 목록 영역
+* **홈**: 중앙 정렬된 검색창, 하단에 추가/랜덤 버튼, 검색 결과 목록 영역
 * **검색 결과 목록**: 카드 또는 리스트 형태
 * **Kaomoji 카드 구성**:
   ```
@@ -132,13 +132,13 @@ CREATE TABLE kaomoji_tag (
 emotag/
 ├── public/
 │   ├── index.html
-│   ├── register.html
+│   ├── add.html
 │   ├── edit.html
 │   ├── css/
 │   │   └── style.css
 │   └── js/
 │       ├── main.js
-│       ├── register.js
+│       ├── add.js
 │       └── edit.js
 ├── functions/
 │   └── api/
