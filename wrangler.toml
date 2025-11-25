@@ -8,5 +8,5 @@ pages_build_output_dir = "public"
 [[d1_databases]]
 binding = "EMOTAG_DB"
 database_name = "emotag-db"
-database_id = "YOUR_DATABASE_ID_HERE"
+database_id = "2872b366-42c9-4bb6-aafd-9a5f90917337"
 
