@@ -38,29 +38,29 @@
 
 ## 4. Frontend - 공통 요소
 
-- [ ] 4.1 `public/css/style.css` - 기본 스타일 및 CSS 변수 정의
-- [ ] 4.2 `public/css/style.css` - Kaomoji 카드 컴포넌트 스타일
-- [ ] 4.3 `public/css/style.css` - 버튼, 입력 필드, 태그 뱃지 스타일
-- [ ] 4.4 `public/css/style.css` - 모달(비밀번호 입력) 스타일
-- [ ] 4.5 `public/css/style.css` - 토스트 메시지 스타일
-- [ ] 4.6 `public/css/style.css` - 반응형 스타일 (모바일/데스크톱)
-- [ ] 4.7 `public/js/utils.js` - API 호출 유틸리티 함수
-- [ ] 4.8 `public/js/utils.js` - 클립보드 복사 함수
-- [ ] 4.9 `public/js/utils.js` - 토스트 메시지 표시 함수
+- [x] 4.1 `public/css/style.css` - 기본 스타일 및 CSS 변수 정의
+- [x] 4.2 `public/css/style.css` - Kaomoji 카드 컴포넌트 스타일
+- [x] 4.3 `public/css/style.css` - 버튼, 입력 필드, 태그 뱃지 스타일
+- [x] 4.4 `public/css/style.css` - 모달(비밀번호 입력) 스타일
+- [x] 4.5 `public/css/style.css` - 토스트 메시지 스타일
+- [x] 4.6 `public/css/style.css` - 반응형 스타일 (모바일/데스크톱)
+- [x] 4.7 `public/js/utils.js` - API 호출 유틸리티 함수
+- [x] 4.8 `public/js/utils.js` - 클립보드 복사 함수
+- [x] 4.9 `public/js/utils.js` - 토스트 메시지 표시 함수
 
 ---
 
 ## 5. Frontend - 홈 페이지 (index.html)
 
-- [ ] 5.1 `public/index.html` - HTML 구조 작성 (검색창, 버튼, 목록 영역)
-- [ ] 5.2 `public/js/main.js` - 페이지 로드 시 전체 Kaomoji 목록 불러오기
-- [ ] 5.3 `public/js/main.js` - 태그 검색 기능 구현
-- [ ] 5.4 `public/js/main.js` - Kaomoji 카드 렌더링 함수
-- [ ] 5.5 `public/js/main.js` - 복사 버튼 클릭 이벤트 (클립보드 복사 + 토스트)
-- [ ] 5.6 `public/js/main.js` - 랜덤 버튼 클릭 이벤트
-- [ ] 5.7 `public/js/main.js` - 수정 버튼 클릭 → 비밀번호 모달 표시
-- [ ] 5.8 `public/js/main.js` - 비밀번호 검증 후 수정 페이지 이동
-- [ ] 5.9 `public/js/main.js` - 태그 뱃지 클릭 시 해당 태그로 검색
+- [x] 5.1 `public/index.html` - HTML 구조 작성 (검색창, 버튼, 목록 영역)
+- [x] 5.2 `public/js/main.js` - 페이지 로드 시 전체 Kaomoji 목록 불러오기
+- [x] 5.3 `public/js/main.js` - 태그 검색 기능 구현
+- [x] 5.4 `public/js/main.js` - Kaomoji 카드 렌더링 함수
+- [x] 5.5 `public/js/main.js` - 복사 버튼 클릭 이벤트 (클립보드 복사 + 토스트)
+- [x] 5.6 `public/js/main.js` - 랜덤 버튼 클릭 이벤트
+- [x] 5.7 `public/js/main.js` - 수정 버튼 클릭 → 비밀번호 모달 표시
+- [x] 5.8 `public/js/main.js` - 비밀번호 검증 후 수정 페이지 이동
+- [x] 5.9 `public/js/main.js` - 태그 뱃지 클릭 시 해당 태그로 검색
 
 ---
 
