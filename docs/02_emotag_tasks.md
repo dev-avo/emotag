@@ -76,13 +76,13 @@
 
 ## 7. Frontend - 수정 페이지 (edit.html)
 
-- [ ] 7.1 `public/edit.html` - HTML 구조 작성 (폼: Kaomoji, 태그 수정, 삭제 버튼)
-- [ ] 7.2 `public/js/edit.js` - URL 파라미터에서 ID 추출
-- [ ] 7.3 `public/js/edit.js` - 기존 Kaomoji 데이터 불러오기
-- [ ] 7.4 `public/js/edit.js` - 태그 수정 UI
-- [ ] 7.5 `public/js/edit.js` - 수정 API 호출 (비밀번호 포함)
-- [ ] 7.6 `public/js/edit.js` - 삭제 버튼 클릭 → 확인 모달 → 삭제 API 호출
-- [ ] 7.7 `public/js/edit.js` - 수정/삭제 성공 시 홈으로 이동
+- [x] 7.1 `public/edit.html` - HTML 구조 작성 (폼: Kaomoji, 태그 수정, 삭제 버튼)
+- [x] 7.2 `public/js/edit.js` - URL 파라미터에서 ID 추출
+- [x] 7.3 `public/js/edit.js` - 기존 Kaomoji 데이터 불러오기
+- [x] 7.4 `public/js/edit.js` - 태그 수정 UI
+- [x] 7.5 `public/js/edit.js` - 수정 API 호출 (비밀번호 포함)
+- [x] 7.6 `public/js/edit.js` - 삭제 버튼 클릭 → 확인 모달 → 삭제 API 호출
+- [x] 7.7 `public/js/edit.js` - 수정/삭제 성공 시 홈으로 이동
 
 ---
 

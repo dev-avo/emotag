@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="emotag - Kaomoji 수정">
+    <title>수정하기 - emotag</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-page">
+            <!-- 뒤로가기 -->
+            <a href="/" class="form-page__back">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                홈으로
+            </a>
+
+            <!-- 로딩 -->
+            <div class="loading" id="loading">
+                <div class="loading__spinner"></div>
+            </div>
+
+            <!-- 에러 상태 -->
+            <div class="empty-state" id="error-state" style="display: none;">
+                <div class="empty-state__icon">⚠️</div>
+                <h2 class="empty-state__title">카오모지를 찾을 수 없어요</h2>
+                <p class="empty-state__text">삭제되었거나 존재하지 않는 카오모지입니다</p>
+                <a href="/" class="btn btn--primary mt-lg">홈으로 돌아가기</a>
+            </div>
+
+            <!-- 수정 폼 -->
+            <div id="edit-content" style="display: none;">
+                <!-- 헤더 -->
+                <header class="form-page__header">
+                    <h1 class="form-page__title">카오모지 수정</h1>
+                    <p class="form-page__subtitle">내용이나 태그를 수정할 수 있어요</p>
+                </header>
+
+                <div class="form-card">
+                    <form id="edit-form">
+                        <!-- Kaomoji 입력 -->
+                        <div class="form-group">
+                            <label class="form-group__label" for="kaomoji-input">카오모지</label>
+                            <input 
+                                type="text" 
+                                id="kaomoji-input" 
+                                class="form-group__input form-group__input--kaomoji" 
+                                placeholder="(◕‿◕)"
+                                autocomplete="off"
+                                required
+                            >
+                            <p class="form-group__error" id="kaomoji-error" style="display: none;"></p>
+                        </div>
+
+                        <!-- 태그 입력 -->
+                        <div class="form-group">
+                            <label class="form-group__label">태그</label>
+                            <div class="tag-input" id="tag-input-container">
+                                <div id="tag-list"></div>
+                                <input 
+                                    type="text" 
+                                    id="tag-input" 
+                                    class="tag-input__field" 
+                                    placeholder="태그 입력 후 Enter"
+                                    autocomplete="off"
+                                >
+                            </div>
+                            <p class="form-group__help">태그를 입력하고 Enter를 누르세요 (최소 1개 이상)</p>
+                            <p class="form-group__error" id="tag-error" style="display: none;"></p>
+                        </div>
+
+                        <!-- 버튼 -->
+                        <div class="mt-lg" style="display: flex; gap: 12px;">
+                            <button type="button" id="delete-btn" class="btn btn--outline" style="flex: 1; color: var(--color-error); border-color: var(--color-error);">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="3 6 5 6 21 6"/>
+                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                                    <line x1="10" y1="11" x2="10" y2="17"/>
+                                    <line x1="14" y1="11" x2="14" y2="17"/>
+                                </svg>
+                                삭제
+                            </button>
+                            <button type="submit" id="submit-btn" class="btn btn--primary" style="flex: 2;">
+                                수정하기
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 삭제 확인 모달 -->
+    <div class="modal-overlay" id="delete-modal">
+        <div class="modal" role="dialog" aria-labelledby="delete-modal-title" aria-modal="true">
+            <h2 class="modal__title" id="delete-modal-title">정말 삭제할까요?</h2>
+            <p style="text-align: center; color: var(--color-text-secondary); margin-bottom: var(--spacing-lg);">
+                삭제된 카오모지는 복구할 수 없어요
+            </p>
+            <div class="modal__actions">
+                <button type="button" class="btn btn--ghost" id="delete-cancel">취소</button>
+                <button type="button" class="btn btn--primary" id="delete-confirm" style="background: var(--color-error);">삭제</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/utils.js"></script>
+    <script src="/js/edit.js"></script>
+</body>
+</html>
+
