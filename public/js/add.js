@@ -55,6 +55,11 @@ document.addEventListener('DOMContentLoaded', function() {
  * 태그 입력 키다운 핸들러
  */
 function handleTagInputKeydown(e) {
+    // 한글 IME 조합 중일 때는 무시 (한글 이중 입력 방지)
+    if(e.isComposing || e.keyCode === 229) {
+        return;
+    }
+
     const value = tagInput.value.trim().toLowerCase();
 
     // Enter 또는 쉼표로 태그 추가

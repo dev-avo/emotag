@@ -118,6 +118,11 @@ async function loadKaomojiData() {
 // ===========================================
 
 function handleTagInputKeydown(e) {
+    // 한글 IME 조합 중일 때는 무시 (한글 이중 입력 방지)
+    if(e.isComposing || e.keyCode === 229) {
+        return;
+    }
+
     const value = tagInput.value.trim().toLowerCase();
 
     if(e.key === 'Enter' || e.key === ',') {
